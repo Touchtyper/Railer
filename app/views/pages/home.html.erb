@@ -1,5 +1,14 @@
 <div class="jumbotron center">
 	<h1>Welcome to Railer: We are currently under construction</h1>
-	<%= link_to "Log in", "#", class: "btn btn-default btn-lg" %>
-	<%= link_to "Sign Up", "#", class: "btn btn-primary" %>
+
+	<% if user_signed_in? %>
+	# Do something
+	<% else %>
+
+	<p>
+	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+	<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+	</p>
+
+<% end %>
 </div>
